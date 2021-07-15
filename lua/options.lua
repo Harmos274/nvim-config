@@ -22,7 +22,7 @@ opt.timeoutlen = 200
 opt.clipboard = 'unnamedplus'
 
 -- Set indent length
-opt.tabstop = 4
+opt.tabstop = 2
 opt.shiftwidth = 0
 opt.expandtab = true
 
