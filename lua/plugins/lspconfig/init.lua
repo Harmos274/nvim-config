@@ -52,7 +52,7 @@ return function ()
       underline = true,
       update_in_insert = false,
       virtual_text = {
-        prefix = ''
+        prefix = '🐸'
       },
     }
   )
@@ -60,13 +60,13 @@ return function ()
   vim.lsp.handlers['textDocument/codeAction'] = require('lsputil.codeAction').code_action_handler
 
   vim.fn.sign_define('LspDiagnosticsSignError',
-    { text = '🐸', texthl = 'LspDiagnosticsSignError' })
+    { text = '🥲', texthl = 'LspDiagnosticsSignError' })
   vim.fn.sign_define('LspDiagnosticsSignWarning',
-    { text = '🐸', texthl = 'LspDiagnosticsSignWarning' })
+    { text = '😠', texthl = 'LspDiagnosticsSignWarning' })
   vim.fn.sign_define('LspDiagnosticsSignInformation',
-    { text = '🐸', texthl = 'LspDiagnosticsSignInformation' })
+    { text = '🔎', texthl = 'LspDiagnosticsSignInformation' })
   vim.fn.sign_define('LspDiagnosticsSignHint',
-    { text = '🐸', texthl = 'LspDiagnosticsSignHint' })
+    { text = '❓', texthl = 'LspDiagnosticsSignHint' })
 
   for _, server in ipairs(servers) do
     lsp[server.name].setup {

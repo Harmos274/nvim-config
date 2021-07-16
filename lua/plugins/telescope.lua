@@ -8,6 +8,8 @@ return function ()
       vimgrep_arguments = {
         'ag',
         '--vimgrep',
+        '--hidden',
+        '--ignore .git'
       },
       mappings = {
         n = {
