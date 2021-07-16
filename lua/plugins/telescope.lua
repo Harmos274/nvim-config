@@ -5,6 +5,10 @@ return function ()
 
   telescope.setup {
     defaults = {
+      vimgrep_arguments = {
+        'ag',
+        '--vimgrep',
+      },
       mappings = {
         n = {
           ['q'] = actions.close,
