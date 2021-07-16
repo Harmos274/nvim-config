@@ -25,11 +25,11 @@ return function ()
   local map = require('utils').map
   local options = { expr = true }
 
-  map('i', '<C-Space>', 'compe#complete()',      options)
-  map('i', '<Esc>',     'compe#close("<Esc>")',  options)
-  map('i', '<CR>',      'compe#confirm("<CR>")', options)
+  map('i', '<C-Space>', 'compe#complete()',                   options)
+  map('i', '<Esc>',     'compe#close("<Esc>")',               options)
+  map('i', '<CR>',      'compe#confirm("<CR>")',              options)
   map('i', '<C-j>',     'pumvisible() ? "<C-n>" : "<Tab>"',   options)
-  map('i', '<C-k>',   'pumvisible() ? "<C-p>" : "<S-Tab>"', options)
+  map('i', '<C-k>',     'pumvisible() ? "<C-p>" : "<S-Tab>"', options)
 
   vim.opt.completeopt = { 'menuone', 'noselect' }
   -- Remove compe status display

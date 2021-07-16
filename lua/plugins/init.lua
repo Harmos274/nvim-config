@@ -11,8 +11,13 @@ end
 require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- packer self management
 
+  -- Colorscheme
   use 'sainnhe/sonokai'
 
+  -- StatusLine
+  use { 'hoob3rt/lualine.nvim', config = require('plugins.lualine') }
+
+  -- Nix file support
   use 'LnL7/vim-nix'
 
   -- Best trailing whitespace plugin (trails only on modified buffers and don't move the cursor)
