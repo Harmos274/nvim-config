@@ -15,6 +15,10 @@ require('packer').startup(function(use)
 
   use 'LnL7/vim-nix'
 
+  -- Best trailing whitespace plugin (trails only on modified buffers and don't move the cursor)
+  use 'axelf4/vim-strip-trailing-whitespace'
+
+  -- LSP
   use {
     'neovim/nvim-lspconfig',
     config = require('plugins.lspconfig'),
@@ -40,12 +44,13 @@ require('packer').startup(function(use)
     'nvim-treesitter/playground'
   }
 
-  -- Finder
+  -- Telescope (Finder)
   use {
     'nvim-telescope/telescope.nvim',
     requires = {
       { 'nvim-lua/popup.nvim' },
       { 'nvim-lua/plenary.nvim' },
+      { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     },
     config = require('plugins.telescope')
   }

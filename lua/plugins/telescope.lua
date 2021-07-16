@@ -10,8 +10,19 @@ return function ()
           ['q'] = actions.close,
         }
       }
+    },
+    extensions = {
+      fzf = {
+        fuzzy = true,
+        override_generic_sorter = true,
+        override_file_sorter = true,
+        case_mode = "smart_case",
+      }
     }
   }
+
+
+  telescope.load_extension('fzf')
 
   map('n', '<C-p>', ':Telescope find_files<CR>')
   map('n', '<C-g>', ':Telescope live_grep<CR>')

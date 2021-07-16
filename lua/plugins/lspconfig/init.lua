@@ -40,6 +40,7 @@ return function ()
 
   local servers = {
     require('plugins.lspconfig.rust-analyzer'),
+    { name = 'rnix'},
     { name = 'bashls' },
   }
 

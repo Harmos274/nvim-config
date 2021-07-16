@@ -1,30 +1,42 @@
-local opt = vim.opt
+local set = vim.opt
 
-opt.foldlevelstart = 99
+set.foldlevelstart = 99
 
 -- Make filenames autocompletion case-insensitive
-opt.wildignorecase = true
+set.wildignorecase = true
 
 -- Make search case insensitive if all lowercase
-opt.ignorecase = true
-opt.smartcase = true
+set.ignorecase = true
+set.smartcase = true
+
+-- When replacing, replace globally without using '/g'
+set.gdefault = true
 
 -- Set line numbers
-opt.number = true
+set.number = true
 
 -- Set cursor scroll distance
-opt.scrolloff = 99
+set.scrolloff = 99
 
 -- Shorten key sequence timeout
-opt.timeoutlen = 200
+set.timeoutlen = 200
 
 -- Use the clipboard as default register
-opt.clipboard = 'unnamedplus'
+set.clipboard = 'unnamedplus'
 
 -- Set indent length
-opt.tabstop = 2
-opt.shiftwidth = 0
-opt.expandtab = true
+set.tabstop = 2
+set.shiftwidth = 0
+set.expandtab = true
 
 -- Disable duplicate mode display
-opt.showmode = false
+set.showmode = false
+
+-- Save undo's after file closes
+set.undofile = true
+
+-- How many undos
+set.undolevels = 1000
+
+-- Number of lines to save for undo
+set.undoreload = 10000
