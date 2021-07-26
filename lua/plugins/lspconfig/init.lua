@@ -46,6 +46,7 @@ return function ()
     { name = 'bashls' },
     { name = 'tsserver' },
     { name = 'pyright' },
+    { name = 'hls' },
   }
 
   capabilities.textDocument.completion.completionItem.snippetSupport = true
