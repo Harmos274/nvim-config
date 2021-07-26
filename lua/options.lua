@@ -12,8 +12,9 @@ set.smartcase = true
 -- When replacing, replace globally without using '/g'
 set.gdefault = true
 
--- Set line numbers
+-- Set line numbers and relatives
 set.number = true
+set.relativenumber = true
 
 -- Set cursor scroll distance
 set.scrolloff = 99
@@ -40,3 +41,13 @@ set.undolevels = 1000
 
 -- Number of lines to save for undo
 set.undoreload = 10000
+
+-- Set mouse in buffer
+set.mouse = 'a'
+
+-- Needed by bufferline and themes
+set.termguicolors = true
+
+-- No wrap by default
+set.wrap = false
+

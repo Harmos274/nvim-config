@@ -41,8 +41,11 @@ return function ()
   local servers = {
     require('plugins.lspconfig.rust-analyzer'),
     require('plugins.lspconfig.sumneko_lua'),
-    { name = 'rnix'},
+    require('plugins.lspconfig.texlab'),
+    { name = 'rnix' },
     { name = 'bashls' },
+    { name = 'tsserver' },
+    { name = 'pyright' },
   }
 
   capabilities.textDocument.completion.completionItem.snippetSupport = true

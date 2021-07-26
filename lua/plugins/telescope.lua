@@ -5,12 +5,6 @@ return function ()
 
   telescope.setup {
     defaults = {
-      vimgrep_arguments = {
-        'ag',
-        '--vimgrep',
-        '--hidden',
-        '--ignore .git'
-      },
       mappings = {
         n = {
           ['q'] = actions.close,
@@ -33,4 +27,5 @@ return function ()
   map('n', '<C-p>', ':Telescope find_files<CR>')
   map('n', '<C-g>', ':Telescope live_grep<CR>')
   map('n', '<C-s>', ':Telescope lsp_references<CR>')
+  map('n', '<C-b>', ':Telescope buffers<CR>')
 end

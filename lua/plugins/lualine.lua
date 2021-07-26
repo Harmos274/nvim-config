@@ -1,26 +1,5 @@
 return function ()
-  local colors = {
-    white    = '#c0caf5',
-    grey     = '#4F5462',
-    darkgrey = '#2C2E34',
-    blue     = '#76CCE0',
-    yellow   = '#E7C664',
-    green    = '#9ED072',
-  }
-
-  local mode_highlight = function (highlight)
-    return {
-      a = { bg = highlight,       fg = colors.darkgrey, gui = 'bold' },
-      b = { bg = colors.grey,     fg = highlight                     },
-      c = { bg = colors.darkgrey, fg = colors.white                  },
-    }
-  end
-
-  local theme = {
-    normal = mode_highlight(colors.blue),
-    insert = mode_highlight(colors.yellow),
-    visual = mode_highlight(colors.green),
-  }
+  local theme = 'material-nvim'
 
   local diagnostics = {
     'diagnostics',

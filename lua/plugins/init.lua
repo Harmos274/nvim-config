@@ -12,7 +12,7 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- packer self management
 
   -- Colorscheme
-  use 'sainnhe/sonokai'
+  use 'marko-cerovac/material.nvim'
 
   -- StatusLine
   use { 'hoob3rt/lualine.nvim', config = require('plugins.lualine') }
@@ -60,7 +60,28 @@ require('packer').startup(function(use)
     config = require('plugins.telescope')
   }
 
+  -- Add symbols pears on typing
+  use {
+    'steelsojka/pears.nvim',
+    config = require('plugins.pears')
+  }
+
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
+
+  -- Augmented buffer line
+  use {
+    'akinsho/nvim-bufferline.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = require('plugins.bufferline')
+  }
+
+  -- File explorer
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = 'kyazdani42/nvim-web-devicons',
+    config = require('plugins.nvimtree')
+  }
+
 end
 )
