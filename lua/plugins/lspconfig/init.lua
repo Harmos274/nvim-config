@@ -42,11 +42,11 @@ return function ()
     require('plugins.lspconfig.rust-analyzer'),
     require('plugins.lspconfig.sumneko_lua'),
     require('plugins.lspconfig.texlab'),
+    require('plugins.lspconfig.hls'),
     { name = 'rnix' },
     { name = 'bashls' },
     { name = 'tsserver' },
     { name = 'pyright' },
-    { name = 'hls' },
   }
 
   capabilities.textDocument.completion.completionItem.snippetSupport = true
