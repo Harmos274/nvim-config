@@ -1,6 +1,6 @@
 local set = vim.opt
 
-set.foldlevelstart = 99
+set.foldlevelstart = 15
 
 -- Make filenames autocompletion case-insensitive
 set.wildignorecase = true
