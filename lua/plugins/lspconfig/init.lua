@@ -22,7 +22,11 @@ return function ()
 
     if client.resolved_capabilities.document_formatting then
       buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>")
-      vim.cmd('autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()')
+      vim.cmd([[
+      augroup autoFormat
+        autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+      augroup END
+      ]])
     end
 
     require('lsp_signature').on_attach({ hint_enable = false })

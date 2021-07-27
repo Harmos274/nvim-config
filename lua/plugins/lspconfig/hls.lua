@@ -1,6 +1,11 @@
 return {
   name = 'hls',
-  settings = {
-    formattingProvider = false
-  }
+
+  on_attach = function ()
+    vim.cmd([[
+      augroup autoFormat
+        autocmd!
+      augroup END
+      ]])
+  end,
 }
