@@ -3,7 +3,7 @@ return {
 
   on_attach = function ()
     vim.cmd([[
-      augroup autoFormat
+      augroup lspAutoFormat
         autocmd!
       augroup END
       ]])
