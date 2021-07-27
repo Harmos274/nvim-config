@@ -9,6 +9,34 @@ return function ()
       left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
       middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
 
+      custom_areas = {
+        right = function()
+          local result = {}
+          local error = vim.lsp.diagnostic.get_count(0, [[Error]])
+          local warning = vim.lsp.diagnostic.get_count(0, [[Warning]])
+          local info = vim.lsp.diagnostic.get_count(0, [[Information]])
+          local hint = vim.lsp.diagnostic.get_count(0, [[Hint]])
+
+          if error ~= 0 then
+            table.insert(result, {text = " 🥲 " .. error .. " ", guifg = "#EC5241"})
+          end
+
+          if warning ~= 0 then
+            table.insert(result, {text = " 😠 " .. warning .. " ", guifg = "#EFB839"})
+          end
+
+          if hint ~= 0 then
+            table.insert(result, {text = " ❓ " .. hint .. " ", guifg = "#A3BA5E"})
+          end
+
+          if info ~= 0 then
+            table.insert(result, {text = " 🔍 " .. info .. " ", guifg = "#7EA9A7"})
+          end
+
+          return result
+        end,
+      },
+
       -- NOTE: this plugin is designed with this icon in mind,
       -- and so changing this is NOT recommended, this is intended
       -- as an escape hatch for people who cannot bear it for whatever reason
@@ -32,9 +60,17 @@ return function ()
       max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
       tab_size = 18,
       diagnostics = "nvim_lsp",
+
       diagnostics_indicator = function(count, level, diagnostics_dict, context)
-        return "("..count..")"
+        local s = " ‒ "
+        for e, n in pairs(diagnostics_dict) do
+          local sym = e == "error" and "🥲 "
+          or (e == "warning" and "😠 " or "❓" )
+          s = s .. n .. sym
+        end
+        return s
       end,
+
       -- NOTE: this will be called a lot so don't do any heavy processing here
       custom_filter = function(buf_number)
         -- filter out filetypes you don't want to see
@@ -68,6 +104,6 @@ return function ()
 
   local map = require('utils').map
 
-  map('n', '<leader><', ':BufferLineCyclePrev<CR>')
-  map('n', '<leader>>', ':BufferLineCycleNext<CR>')
+  map('n', 'bn', ':BufferLineCyclePrev<CR>')
+  map('n', 'bp', ':BufferLineCycleNext<CR>')
 end
