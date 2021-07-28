@@ -32,6 +32,10 @@ require('packer').startup(function(use)
         'RishabhRD/nvim-lsputils',
         requires = 'RishabhRD/popfix',
       },
+      {
+        'onsails/lspkind-nvim',
+        config = require('plugins.lspconfig.lspkind')
+      },
       'ray-x/lsp_signature.nvim',
     },
   }
@@ -75,6 +79,8 @@ require('packer').startup(function(use)
     requires = 'kyazdani42/nvim-web-devicons',
     config = require('plugins.bufferline')
   }
+
+  -- VScode like icons on LSP autocompletion
 
   -- File explorer
   use {

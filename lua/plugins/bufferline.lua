@@ -65,28 +65,28 @@ return function ()
         local s = " ‒ "
         for e, n in pairs(diagnostics_dict) do
           local sym = e == "error" and "🥲 "
-          or (e == "warning" and "😠 " or "❓" )
+          or (e == "warning" and "😠 " or "🔍" )
           s = s .. n .. sym
         end
         return s
       end,
 
       -- NOTE: this will be called a lot so don't do any heavy processing here
-      custom_filter = function(buf_number)
-        -- filter out filetypes you don't want to see
-        if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
-          return true
-        end
-        -- filter out by buffer name
-        if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
-          return true
-        end
-        -- filter out based on arbitrary rules
-        -- e.g. filter out vim wiki buffer from tabline in your work repo
-        if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
-          return true
-        end
-      end,
+      -- custom_filter = function(buf_number)
+      --   -- filter out filetypes you don't want to see
+      --   if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
+      --     return true
+      --   end
+      --   -- filter out by buffer name
+      --   if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
+      --     return true
+      --   end
+      --   -- filter out based on arbitrary rules
+      --   -- e.g. filter out vim wiki buffer from tabline in your work repo
+      --   if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
+      --     return true
+      --   end
+      -- end,
       offsets = {{filetype = "NvimTree", text = "File Expl🐸rer", text_align = "center" }},
       show_buffer_icons = true, -- disable filetype icons for buffers
       show_buffer_close_icons = true,
@@ -104,6 +104,6 @@ return function ()
 
   local map = require('utils').map
 
-  map('n', 'bn', ':BufferLineCyclePrev<CR>')
-  map('n', 'bp', ':BufferLineCycleNext<CR>')
+  map('n', '<leader>n', ':BufferLineCyclePrev<CR>')
+  map('n', '<leader>p', ':BufferLineCycleNext<CR>')
 end

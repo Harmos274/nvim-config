@@ -5,6 +5,7 @@ return function ()
 
   local capabilities = vim.lsp.protocol.make_client_capabilities()
 
+
   local on_attach = function (client, bufnr)
     local function buf_set_keymap(...) utils.buf_map(bufnr, ...) end
 

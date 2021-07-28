@@ -4,7 +4,6 @@ set.foldlevelstart = 15
 
 -- Make filenames autocompletion case-insensitive
 set.wildignorecase = true
-
 -- Make search case insensitive if all lowercase
 set.ignorecase = true
 set.smartcase = true
@@ -51,3 +50,5 @@ set.termguicolors = true
 -- No wrap by default
 set.wrap = false
 
+-- Remove the `~` on all non existent lines
+vim.api.nvim_command('set fillchars=eob:\\ ')
