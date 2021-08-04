@@ -48,9 +48,9 @@ return function ()
     require('plugins.lspconfig.sumneko_lua'),
     require('plugins.lspconfig.texlab'),
     require('plugins.lspconfig.hls'),
+    require('plugins.lspconfig.tsserver'),
     { name = 'rnix' },
     { name = 'bashls' },
-    { name = 'tsserver' },
     { name = 'pyright' },
   }
 

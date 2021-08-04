@@ -47,7 +47,7 @@ require('packer').startup(function(use)
   use {
     {
       'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate',
+      run = '<cmd>TSUpdate',
       config = require('plugins.treesitter'),
     },
     'nvim-treesitter/playground'

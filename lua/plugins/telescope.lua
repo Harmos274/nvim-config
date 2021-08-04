@@ -24,8 +24,8 @@ return function ()
 
   telescope.load_extension('fzf')
 
-  map('n', '<C-p>', ':Telescope find_files<CR>')
-  map('n', '<C-g>', ':Telescope live_grep<CR>')
-  map('n', '<C-s>', ':Telescope lsp_references<CR>')
-  map('n', '<C-b>', ':Telescope buffers<CR>')
+  map('n', '<C-p>', '<cmd>Telescope find_files<CR>')
+  map('n', '<C-g>', '<cmd>Telescope live_grep<CR>')
+  map('n', '<C-s>', '<cmd>Telescope lsp_references<CR>')
+  map('n', '<C-b>', '<cmd>Telescope buffers<CR>')
 end

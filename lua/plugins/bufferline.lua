@@ -104,6 +104,6 @@ return function ()
 
   local map = require('utils').map
 
-  map('n', '<leader>n', ':BufferLineCyclePrev<CR>')
-  map('n', '<leader>p', ':BufferLineCycleNext<CR>')
+  map('n', '<leader>n', '<cmd>BufferLineCyclePrev<CR>')
+  map('n', '<leader>p', '<cmd>BufferLineCycleNext<CR>')
 end
