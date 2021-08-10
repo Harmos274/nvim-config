@@ -40,6 +40,9 @@ require('packer').startup(function(use)
     },
   }
 
+  -- Smart alignment (Mainly for Haskell)
+  use { 'junegunn/vim-easy-align' }
+
   -- Autocompletion
   use { 'hrsh7th/nvim-compe', config = require('plugins.compe') }
 
