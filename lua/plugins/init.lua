@@ -12,7 +12,7 @@ require('packer').startup(function(use)
   use 'wbthomason/packer.nvim' -- packer self management
 
   -- Colorscheme
-  use 'marko-cerovac/material.nvim'
+  use { 'marko-cerovac/material.nvim', config = require('plugins.material') }
 
   -- StatusLine
   use { 'hoob3rt/lualine.nvim', config = require('plugins.lualine') }
