@@ -3,7 +3,7 @@ return function ()
 
   -- Set the line background to the buffer background color
   theme.normal.c.bg = '#292d3e'
-  theme.inactive.c.bg = '#1b1e2b'
+  theme.inactive.c.bg = '#292d3e'
 
 
   -- local diagnostics = {

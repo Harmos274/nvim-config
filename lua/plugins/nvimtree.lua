@@ -36,7 +36,7 @@ return function ()
     },
     view = {
       -- width of the window, can be either a number (columns) or a string in `%`, for left or right side placement
-      width = 20,
+      width = "20%",
       -- height of the window, can be either a number (columns) or a string in `%`, for top or bottom side placement
       height = 100,
       -- side of the tree, can be one of 'left' | 'right' | 'top' | 'bottom'
