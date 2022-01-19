@@ -18,7 +18,7 @@ return function ()
     buf_set_keymap('n', 'g0',        '<cmd>lua vim.lsp.buf.document_symbol()<CR>')
     buf_set_keymap('n', 'gW',        '<cmd>lua vim.lsp.buf.workspace_symbol()<CR>')
     buf_set_keymap('n', 'gk',        '<cmd>lua vim.lsp.buf.code_action()<CR>')
-    buf_set_keymap('n', '<leader>d', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics.open_float()<CR>')
+    buf_set_keymap('n', '<leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
     buf_set_keymap('n', '<leader>r', '<cmd>lua vim.lsp.buf.rename()<CR>')
 
     if client.resolved_capabilities.document_formatting then
